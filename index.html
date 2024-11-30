@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers from 1 to 10</title>
+    <style>
+        body {
+             font-family: 'Arial', sans-serif;
+             line-height: 1.6;
+             background: linear-gradient( to right, #e0522e, #feb47b 40%, #6a11cb 90%);
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            color: rgb(26, 168, 62);
+        }
+    </style>
+</head>
+<body>
+    <U><h1>FOR LOOP ASSIGNMENTS</h1></U>
+
+    <fieldset>
+    <h1>1.Numbers from 1 to 10</h1>
+    <div id="output1"></div>
+    </fieldset><BR>
+    <fieldset>
+    <h1> 2.Even Numbers from 1 to 20</h1>
+    <div id="output2"></div>
+    </fieldset><BR>
+        <fieldset>
+            <div class="container">
+                <h1>Calculate the Sum of First 10 Natural Numbers</h1>
+                <button onclick="calculateSum()">Calculate Sum</button>
+                <div class="result" id="result"></div>
+            </div>
+        </fieldset><br>
+        <fieldset>
+            <div class="container">
+                <h1>4.Reverse a String</h1>
+                <button onclick="reverseString()">Reverse "JavaScript"</button>
+                <p class="result" id="reversedString"></p>
+            </div>
+        </fieldset><br>
+        <fieldset>
+            <div class="container">
+                <h1>5.Multiplication Table of 5</h1>
+                <button onclick="generateTable()">Generate Table</button>
+                <div id="tableOutput" class="multiplication-table"></div>
+            </div>
+        </fieldset><br>
+        </body>
+        <script>
+            let outputDiv = document.getElementById('output1');
+            let numbers = '';
+            for (let i = 1; i <= 10; i++) {
+                numbers += i + ' ';
+            }
+            outputDiv.textContent = numbers;
+                    let output = document.getElementById('output2');
+                    let evenNumbers = '';
+                    for (let i = 2; i <= 20; i += 2) {
+                        evenNumbers += i + ' ';
+                    }
+            output.textContent = evenNumbers;
+            // sum of first 10 numbers
+            function calculateSum() {
+                let sum = 0;
+                for (let i = 1; i <= 10; i++) {
+                    sum += i;
+                }
+                document.getElementById('result').innerHTML = "The sum of the first 10 natural numbers is: " + sum;
+            }
+    
+            function reverseString() {
+                let str = "JavaScript";
+                let reversedStr = "";
+                
+                for (let i = str.length - 1; i >= 0; i--) {
+                    reversedStr += str[i];
+                }
+                
+                document.getElementById('reversedString').innerText = `Reversed String: ${reversedStr}`;
+            }
+            function generateTable() {
+                let table = "";
+                let number = 5; 
+    
+                for (let i = 1; i <= 10; i++) {
+                    table += `${number} x ${i} = ${number * i}<br>`;
+                }
+                document.getElementById('tableOutput').innerHTML = table;
+            }
+            </script>
+        </html>
